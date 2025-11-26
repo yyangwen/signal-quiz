@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>信号处理填空题复习系统</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- 标题 -->
+    <h1>📚 信号处理复习系统</h1>
+
+    <!-- 控制区 -->
+    <div class="controls">
+      <div>
+        <label for="chapterSelect">选择章节：</label>
+        <select id="chapterSelect"></select>
+      </div>
+
+      <div>
+        <label for="orderSelect">出题顺序：</label>
+        <select id="orderSelect">
+          <option value="sequential">顺序</option>
+          <option value="random">乱序</option>
+        </select>
+      </div>
+
+      <button id="startBtn">开始复习</button>
+      <button id="showWrongBtn">查看错题本</button>
+    </div>
+
+    <!-- 主题内容区 -->
+    <div id="mainContent">
+      <!-- 题目区域 -->
+      <div id="questionArea" class="hidden">
+        <div class="question-box">
+          <p id="questionText"></p>
+          <div class="answer-actions">
+            <button id="nextBtn">下一题</button>
+            <button id="showAnswerBtn">查看答案</button>
+            <button id="addToWrongBtn">加入错题本</button>
+          </div>
+          <div id="answerBox" class="hidden">
+            <strong>参考答案：</strong>
+            <span id="answerText"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 错题本区域 -->
+      <div id="wrongArea" class="hidden">
+        <h2>💔 错题本 (<span id="wrongCount">0</span> 道)</h2>
+        <button id="clearWrongBtn">清空错题本</button>
+        <ul id="wrongList"></ul>
+        <button id="backBtn">返回复习</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
